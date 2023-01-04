@@ -3,7 +3,7 @@
   <ul>
     {{ range .Translations }}
     <li class="nav-item">
-      <a class="pure-button" href="{{ .RelPermalink }}">{{ .Lang }}</a>
+      <a class="pure-button" href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a>
     </li>
     {{ end}}
   </ul>
