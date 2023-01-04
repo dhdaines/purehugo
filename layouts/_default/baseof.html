@@ -20,7 +20,9 @@
     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
-    <link rel="stylesheet" href='{{ "css/all.min.css" | absURL }}'>
+    {{ with resources.Get "css/blog.css" | resources.Minify }}
+    <link rel="stylesheet" href='{{ .RelPermalink }}'>
+    {{ end }}
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href='{{ "index.xml" | absLangURL }}' />
 </head>
