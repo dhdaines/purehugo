@@ -5,6 +5,16 @@
             <h2 class="brand-tagline">{{ with .Site.Params.description }} {{.}} {{end}}</h2>
         </hgroup>
 
+        <nav class="nav">
+          <ul class="nav-list">
+          {{ $currentPage := . }}
+          {{ range .Site.Menus.main }}
+          <li class="nav-item">
+            <a class="pure-button" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+          </li>
+          {{ end }}
+          </ul>
+        </nav>
         {{ partial "i18nlist.html" . }}
         <nav class="nav">
             <ul class="nav-list">
