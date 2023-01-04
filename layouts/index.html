@@ -1,3 +1,5 @@
 {{ define "main" }}
+{{ with .Site.GetPage "section" "blog" }}
 {{ partial "posts" . }}
+{{ end }}
 {{ end }}

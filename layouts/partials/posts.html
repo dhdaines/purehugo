@@ -1,7 +1,6 @@
 <div>
   <!-- A wrapper for all the blog posts -->
   <div class="posts">
-    {{ with .Site.GetPage "section" "blog" }}
     {{ range .Paginator.Pages }}
     <h1 class="content-subhead">{{ .Date | time.Format ":date_full" }}</h1>
     <section class="post">
@@ -24,7 +23,6 @@
         {{ .Content }}
       </div>
     </section>
-    {{ end }}
     {{ end }}
   </div>
   {{ partial "pagination.html" . }}
